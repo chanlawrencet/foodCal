@@ -5,7 +5,7 @@ class FoodListItem extends React.Component {
   render() {
     const {title} = this.props;
     return (
-      <View>
+      <View elevation={10} style={{padding: 20, backgroundColor: '#F0FFFF', margin: 10, borderRadius: 10}}>
         <Text>{title}</Text>
       </View>
     );

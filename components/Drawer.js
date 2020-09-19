@@ -4,20 +4,26 @@ import TouchableOpacity from "react-native-web/dist/exports/TouchableOpacity";
 
 
 const Option = ({title, active, touched}) =>
+  <View
+    elevation={touched? 10 : 2}
+    style={{
+      height: 40,
+      width: 80,
+      paddingTop: 9,
+      borderRadius: 50,
+      borderColor: 'grey',
+      backgroundColor: active ? '#F0FFFF' : 'white',
+      borderWidth: 2,
+    }}
+  >
     <Text
       style={{
         textAlign: 'center',
-        height: 40,
-        width: 80,
-        paddingTop: 9,
-        borderRadius: 50,
-        borderColor: 'grey',
-        borderWidth: active ? 4 : 1,
-        backgroundColor: touched ? 'grey' : 'white'
       }}
     >
       {title}
-    </Text>;
+    </Text>
+  </View>;
 
 class Drawer extends React.Component {
   constructor(props) {

@@ -80,10 +80,6 @@ class FoodList extends React.Component {
 
     const {data} = this.state;
 
-    const renderItem = ({ item }) => (
-      <FoodListItem title={item.title} />
-    );
-
     return(
       <View>
         <View style={{
@@ -114,9 +110,11 @@ class FoodList extends React.Component {
           />
         </View>
 
-        <ScrollView>
-          {data.map(el => <View key={el.key}><Text style={{padding: 20}}>{el.title}</Text></View>)}
-        </ScrollView>
+        {data.length === 0 ? <FoodListItem title={'no entries found'}/> :
+          <ScrollView>
+            {data.map((el, idx) => <View key={idx}><FoodListItem title={el.title}/></View>)}
+          </ScrollView>
+        }
       </View>
     )
   }
