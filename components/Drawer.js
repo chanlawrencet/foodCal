@@ -71,13 +71,17 @@ class Drawer extends React.Component {
       <View style={{
         width: '100%',
         height: 80,
-        borderColor:'blue',
-        borderWidth:1,
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-evenly',
-        alignItems:'center'
-      }}>
+        alignItems:'center',
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        backgroundColor: '#f7ffff',
+        marginTop: -40
+      }}
+        elevation={50}
+      >
         {drawerOptions.map((drawerOption, idx) =>
           <View
             key={idx}
